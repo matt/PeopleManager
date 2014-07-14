@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6185.7" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6181.2"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ManagePersonViewController" customModule="PeopleManager" customModuleProvider="target">
+            <connections>
+                <outlet property="firstName" destination="8xM-1x-k75" id="gLi-FJ-tPW"/>
+                <outlet property="lastName" destination="zlz-pP-e7t" id="u5v-7w-KRZ"/>
+                <outlet property="photoView" destination="uNd-ds-9sA" id="hxB-Md-mRm"/>
+                <outlet property="toolbar" destination="F5z-5n-BKA" id="Dlv-H8-IwI"/>
+                <outlet property="view" destination="TTq-KP-Bok" id="0JR-r3-ywP"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="TTq-KP-Bok" customClass="UIControl">
+            <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uNd-ds-9sA">
+                    <rect key="frame" x="16" y="16" width="60" height="60"/>
+                </imageView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8xM-1x-k75">
+                    <rect key="frame" x="107" y="10" width="213" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                    <connections>
+                        <action selector="updateDoneButton:" destination="-1" eventType="editingChanged" id="WJs-P0-MmH"/>
+                        <action selector="updateDoneButton:" destination="-1" eventType="touchCancel" id="ZFM-SP-JaU"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zlz-pP-e7t">
+                    <rect key="frame" x="107" y="56" width="213" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                    <connections>
+                        <action selector="updateDoneButton:" destination="-1" eventType="touchCancel" id="4JR-Ij-Z7a"/>
+                        <action selector="updateDoneButton:" destination="-1" eventType="editingChanged" id="Rpr-Ha-uFK"/>
+                    </connections>
+                </textField>
+                <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F5z-5n-BKA">
+                    <rect key="frame" x="0.0" y="460" width="320" height="44"/>
+                    <items>
+                        <barButtonItem title="Delete Person" width="117" id="iiv-Y3-EnX">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="deleteTapped:" destination="-1" id="bBi-IA-4Nd"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <connections>
+                <action selector="backgroundTapped:" destination="-1" eventType="touchUpInside" id="uUq-29-y2w"/>
+            </connections>
+            <point key="canvasLocation" x="724" y="354"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4">
+            <size key="portraitSize" width="320" height="568"/>
+            <size key="landscapeSize" width="568" height="320"/>
+        </simulatedScreenMetrics>
+    </simulatedMetricsContainer>
+</document>

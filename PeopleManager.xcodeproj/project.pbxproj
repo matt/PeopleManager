@@ -1,0 +1,452 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		16C5A4ED1974629C008BC7CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5A4EC1974629C008BC7CF /* AppDelegate.swift */; };
+		16C5A4F01974629C008BC7CF /* PeopleManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 16C5A4EE1974629C008BC7CF /* PeopleManager.xcdatamodeld */; };
+		16C5A4F71974629C008BC7CF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16C5A4F61974629C008BC7CF /* Images.xcassets */; };
+		16C5A5031974629C008BC7CF /* PeopleManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5A5021974629C008BC7CF /* PeopleManagerTests.swift */; };
+		16C5A50E19746334008BC7CF /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5A50D19746334008BC7CF /* DataStore.swift */; };
+		16C5A51119746424008BC7CF /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5A51019746424008BC7CF /* Person.swift */; };
+		16C5A513197464BF008BC7CF /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5A512197464BF008BC7CF /* PeopleViewController.swift */; };
+		16C5A51519746607008BC7CF /* ManagePersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5A51419746607008BC7CF /* ManagePersonViewController.swift */; };
+		16C5A517197466C2008BC7CF /* PersonDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5A516197466C2008BC7CF /* PersonDetailViewController.swift */; };
+		16C5A5191974673D008BC7CF /* ManagePersonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16C5A5181974673D008BC7CF /* ManagePersonViewController.xib */; };
+		16C5A51B19746C5C008BC7CF /* PersonDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16C5A51A19746C5C008BC7CF /* PersonDetailViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		16C5A4FD1974629C008BC7CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 16C5A4DF1974629C008BC7CF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 16C5A4E61974629C008BC7CF;
+			remoteInfo = PeopleManager;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		16C5A4E71974629C008BC7CF /* PeopleManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeopleManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		16C5A4EB1974629C008BC7CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16C5A4EC1974629C008BC7CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		16C5A4EF1974629C008BC7CF /* PeopleManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PeopleManager.xcdatamodel; sourceTree = "<group>"; };
+		16C5A4F61974629C008BC7CF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		16C5A4FC1974629C008BC7CF /* PeopleManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeopleManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		16C5A5011974629C008BC7CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16C5A5021974629C008BC7CF /* PeopleManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleManagerTests.swift; sourceTree = "<group>"; };
+		16C5A50D19746334008BC7CF /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		16C5A51019746424008BC7CF /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		16C5A512197464BF008BC7CF /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
+		16C5A51419746607008BC7CF /* ManagePersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagePersonViewController.swift; sourceTree = "<group>"; };
+		16C5A516197466C2008BC7CF /* PersonDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailViewController.swift; sourceTree = "<group>"; };
+		16C5A5181974673D008BC7CF /* ManagePersonViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ManagePersonViewController.xib; sourceTree = "<group>"; };
+		16C5A51A19746C5C008BC7CF /* PersonDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonDetailViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		16C5A4E41974629C008BC7CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16C5A4F91974629C008BC7CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		16C5A4DE1974629C008BC7CF = {
+			isa = PBXGroup;
+			children = (
+				16C5A4E91974629C008BC7CF /* PeopleManager */,
+				16C5A4FF1974629C008BC7CF /* PeopleManagerTests */,
+				16C5A4E81974629C008BC7CF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		16C5A4E81974629C008BC7CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				16C5A4E71974629C008BC7CF /* PeopleManager.app */,
+				16C5A4FC1974629C008BC7CF /* PeopleManagerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		16C5A4E91974629C008BC7CF /* PeopleManager */ = {
+			isa = PBXGroup;
+			children = (
+				16C5A50C19746320008BC7CF /* Core Data */,
+				16C5A4EC1974629C008BC7CF /* AppDelegate.swift */,
+				16C5A512197464BF008BC7CF /* PeopleViewController.swift */,
+				16C5A51419746607008BC7CF /* ManagePersonViewController.swift */,
+				16C5A5181974673D008BC7CF /* ManagePersonViewController.xib */,
+				16C5A516197466C2008BC7CF /* PersonDetailViewController.swift */,
+				16C5A51A19746C5C008BC7CF /* PersonDetailViewController.xib */,
+				16C5A4F61974629C008BC7CF /* Images.xcassets */,
+				16C5A4EA1974629C008BC7CF /* Supporting Files */,
+			);
+			path = PeopleManager;
+			sourceTree = "<group>";
+		};
+		16C5A4EA1974629C008BC7CF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				16C5A4EB1974629C008BC7CF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		16C5A4FF1974629C008BC7CF /* PeopleManagerTests */ = {
+			isa = PBXGroup;
+			children = (
+				16C5A5021974629C008BC7CF /* PeopleManagerTests.swift */,
+				16C5A5001974629C008BC7CF /* Supporting Files */,
+			);
+			path = PeopleManagerTests;
+			sourceTree = "<group>";
+		};
+		16C5A5001974629C008BC7CF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				16C5A5011974629C008BC7CF /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		16C5A50C19746320008BC7CF /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				16C5A50F19746412008BC7CF /* Models */,
+				16C5A50D19746334008BC7CF /* DataStore.swift */,
+				16C5A4EE1974629C008BC7CF /* PeopleManager.xcdatamodeld */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		16C5A50F19746412008BC7CF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				16C5A51019746424008BC7CF /* Person.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		16C5A4E61974629C008BC7CF /* PeopleManager */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16C5A5061974629C008BC7CF /* Build configuration list for PBXNativeTarget "PeopleManager" */;
+			buildPhases = (
+				16C5A4E31974629C008BC7CF /* Sources */,
+				16C5A4E41974629C008BC7CF /* Frameworks */,
+				16C5A4E51974629C008BC7CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PeopleManager;
+			productName = PeopleManager;
+			productReference = 16C5A4E71974629C008BC7CF /* PeopleManager.app */;
+			productType = "com.apple.product-type.application";
+		};
+		16C5A4FB1974629C008BC7CF /* PeopleManagerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16C5A5091974629C008BC7CF /* Build configuration list for PBXNativeTarget "PeopleManagerTests" */;
+			buildPhases = (
+				16C5A4F81974629C008BC7CF /* Sources */,
+				16C5A4F91974629C008BC7CF /* Frameworks */,
+				16C5A4FA1974629C008BC7CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				16C5A4FE1974629C008BC7CF /* PBXTargetDependency */,
+			);
+			name = PeopleManagerTests;
+			productName = PeopleManagerTests;
+			productReference = 16C5A4FC1974629C008BC7CF /* PeopleManagerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		16C5A4DF1974629C008BC7CF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Matthew Mohrman";
+				TargetAttributes = {
+					16C5A4E61974629C008BC7CF = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					16C5A4FB1974629C008BC7CF = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 16C5A4E61974629C008BC7CF;
+					};
+				};
+			};
+			buildConfigurationList = 16C5A4E21974629C008BC7CF /* Build configuration list for PBXProject "PeopleManager" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 16C5A4DE1974629C008BC7CF;
+			productRefGroup = 16C5A4E81974629C008BC7CF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				16C5A4E61974629C008BC7CF /* PeopleManager */,
+				16C5A4FB1974629C008BC7CF /* PeopleManagerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		16C5A4E51974629C008BC7CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16C5A51B19746C5C008BC7CF /* PersonDetailViewController.xib in Resources */,
+				16C5A4F71974629C008BC7CF /* Images.xcassets in Resources */,
+				16C5A5191974673D008BC7CF /* ManagePersonViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16C5A4FA1974629C008BC7CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		16C5A4E31974629C008BC7CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16C5A513197464BF008BC7CF /* PeopleViewController.swift in Sources */,
+				16C5A4F01974629C008BC7CF /* PeopleManager.xcdatamodeld in Sources */,
+				16C5A517197466C2008BC7CF /* PersonDetailViewController.swift in Sources */,
+				16C5A50E19746334008BC7CF /* DataStore.swift in Sources */,
+				16C5A51519746607008BC7CF /* ManagePersonViewController.swift in Sources */,
+				16C5A51119746424008BC7CF /* Person.swift in Sources */,
+				16C5A4ED1974629C008BC7CF /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16C5A4F81974629C008BC7CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16C5A5031974629C008BC7CF /* PeopleManagerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		16C5A4FE1974629C008BC7CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 16C5A4E61974629C008BC7CF /* PeopleManager */;
+			targetProxy = 16C5A4FD1974629C008BC7CF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		16C5A5041974629C008BC7CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		16C5A5051974629C008BC7CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		16C5A5071974629C008BC7CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = PeopleManager/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		16C5A5081974629C008BC7CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = PeopleManager/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		16C5A50A1974629C008BC7CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PeopleManager.app/PeopleManager";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PeopleManagerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		16C5A50B1974629C008BC7CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PeopleManager.app/PeopleManager";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PeopleManagerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		16C5A4E21974629C008BC7CF /* Build configuration list for PBXProject "PeopleManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16C5A5041974629C008BC7CF /* Debug */,
+				16C5A5051974629C008BC7CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		16C5A5061974629C008BC7CF /* Build configuration list for PBXNativeTarget "PeopleManager" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16C5A5071974629C008BC7CF /* Debug */,
+				16C5A5081974629C008BC7CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		16C5A5091974629C008BC7CF /* Build configuration list for PBXNativeTarget "PeopleManagerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16C5A50A1974629C008BC7CF /* Debug */,
+				16C5A50B1974629C008BC7CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		16C5A4EE1974629C008BC7CF /* PeopleManager.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				16C5A4EF1974629C008BC7CF /* PeopleManager.xcdatamodel */,
+			);
+			currentVersion = 16C5A4EF1974629C008BC7CF /* PeopleManager.xcdatamodel */;
+			path = PeopleManager.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 16C5A4DF1974629C008BC7CF /* Project object */;
+}
