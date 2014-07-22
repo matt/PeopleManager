@@ -97,7 +97,7 @@ class PeopleViewController: UITableViewController, NSFetchedResultsControllerDel
         definesPresentationContext = true
     }
     
-    //MARK: UITableViewDataSource
+    // MARK: - UITableViewDataSource
     
     override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
         return fetchedResultsController.sections.count
@@ -142,7 +142,7 @@ class PeopleViewController: UITableViewController, NSFetchedResultsControllerDel
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
-    //MARK: NSFetchedResultsControllerDelegate
+    // MARK: - NSFetchedResultsControllerDelegate
     
     func controllerWillChangeContent(controller: NSFetchedResultsController) {
         let tableView = currentTableView()
@@ -210,7 +210,7 @@ class PeopleViewController: UITableViewController, NSFetchedResultsControllerDel
         cell.textLabel.attributedText = attrFullName
     }
     
-    //MARK: UISearchResultsUpdating
+    // MARK: - UISearchResultsUpdating
     
     func updateSearchResultsForSearchController(searchController: UISearchController!) {
         fetchedResultsControllerWithSearchString(searchController.searchBar.text)
@@ -223,7 +223,7 @@ class PeopleViewController: UITableViewController, NSFetchedResultsControllerDel
         }
     }
     
-    //MARK: ManagePersonViewControllerDelegate
+    // MARK: - ManagePersonViewControllerDelegate
     
     func doneManagingPerson(person: Person?) {
         let personDetailViewController = PersonDetailViewController(person: person!)

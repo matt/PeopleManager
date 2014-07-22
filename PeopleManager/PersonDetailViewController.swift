@@ -51,7 +51,7 @@ class PersonDetailViewController: UIViewController, ManagePersonViewControllerDe
         presentViewController(navigationController, animated: false, completion: nil)
     }
     
-    //MARK: ManagePersonViewControllerDelegate
+    // MARK: - ManagePersonViewControllerDelegate
     
     func doneManagingPerson(person: Person?) {
         self.person = person

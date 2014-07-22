@@ -121,7 +121,7 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
-    //MARK: UITextFieldDelegate
+    // MARK: - UITextFieldDelegate
     
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
         if (textField == firstName) {

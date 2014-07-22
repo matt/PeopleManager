@@ -22,77 +22,80 @@ class DataStore {
         return Static.instance!
     }
     
-    //MARK: Core Data stack
+    // MARK: - Core Data stack
     
-    // Returns the managed object context for the application.
-    // If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
-    var managedObjectContext: NSManagedObjectContext {
-        if !_managedObjectContext {
-            let coordinator = self.persistentStoreCoordinator
-            if coordinator != nil {
-                _managedObjectContext = NSManagedObjectContext()
-                _managedObjectContext!.persistentStoreCoordinator = coordinator
-            }
-        }
-        return _managedObjectContext!
-    }
-    var _managedObjectContext: NSManagedObjectContext? = nil
-    
-    // Returns the managed object model for the application.
-    // If the model doesn't already exist, it is created from the application's model.
-    var managedObjectModel: NSManagedObjectModel {
-        if !_managedObjectModel {
-            let modelURL = NSBundle.mainBundle().URLForResource("PeopleManager", withExtension: "momd")
-            _managedObjectModel = NSManagedObjectModel(contentsOfURL: modelURL)
-        }
-        return _managedObjectModel!
-    }
-    var _managedObjectModel: NSManagedObjectModel? = nil
-    
-    // Returns the persistent store coordinator for the application.
-    // If the coordinator doesn't already exist, it is created and the application's store added to it.
-    var persistentStoreCoordinator: NSPersistentStoreCoordinator {
-        if !_persistentStoreCoordinator {
-            let storeURL = self.applicationDocumentsDirectory.URLByAppendingPathComponent("PeopleManager.sqlite")
-            let firstRun = !NSFileManager.defaultManager().fileExistsAtPath(storeURL.path)
-            var error: NSError? = nil
-            _persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-            if _persistentStoreCoordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: nil, error: &error) == nil {
-                println("Unresolved error \(error), \(error!.userInfo)")
-            }
-        }
-        return _persistentStoreCoordinator!
-    }
-    var _persistentStoreCoordinator: NSPersistentStoreCoordinator? = nil
-    
-    //MARK: Application's Documents directory
-    
-    var applicationDocumentsDirectory: NSURL {
+    lazy var applicationDocumentsDirectory: NSURL = {
+        // The directory the application uses to store the Core Data store file. This code uses a directory named "com.matthewmohrman.PeopleManager" in the application's documents Application Support directory.
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-        
-        return urls[urls.count - 1] as NSURL
-    }
+        return urls[urls.count-1] as NSURL
+    }()
     
-    func createPersonWithFirstName(firstName: String, lastName: String) -> Person {
-        let managedObjectContext = self.managedObjectContext
-        let person = NSEntityDescription.insertNewObjectForEntityForName("Person", inManagedObjectContext: managedObjectContext) as Person
+    lazy var managedObjectModel: NSManagedObjectModel = {
+        // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
+        let modelURL = NSBundle.mainBundle().URLForResource("PeopleManager", withExtension: "momd")
+        return NSManagedObjectModel(contentsOfURL: modelURL)
+    }()
+    
+    lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
+        // The persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
+        // Create the coordinator and store
+        var coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
+        let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("PeopleManager.sqlite")
+        var error: NSError? = nil
+        var failureReason = "There was an error creating or loading the application's saved data."
+        if coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil, error: &error) == nil {
+            coordinator = nil
+            // Report any error we got.
+            let dict = NSMutableDictionary()
+            dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
+            dict[NSLocalizedFailureReasonErrorKey] = failureReason
+            dict[NSUnderlyingErrorKey] = error
+            error = NSError.errorWithDomain("YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
+            // Replace this with code to handle the error appropriately.
+            NSLog("Unresolved error \(error), \(error!.userInfo)")
+        }
         
-        person.firstName = firstName
-        person.lastName = lastName
+        return coordinator
+    }()
+
+    lazy var managedObjectContext: NSManagedObjectContext? = {
+        // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) This property is optional since there are legitimate error conditions that could cause the creation of the context to fail.
+        let coordinator = self.persistentStoreCoordinator
+        if !coordinator {
+            return nil
+        }
+        var managedObjectContext = NSManagedObjectContext()
+        managedObjectContext.persistentStoreCoordinator = coordinator
+        return managedObjectContext
+    }()
+
+    
+    func createPersonWithFirstName(firstName: String, lastName: String) -> Person? {
+        var person: Person?
+        
+        if let moc = self.managedObjectContext {
+            person = NSEntityDescription.insertNewObjectForEntityForName("Person", inManagedObjectContext: moc) as? Person
+            
+            if person != nil {
+                person!.firstName = firstName
+                person!.lastName = lastName
+            }
+        }
         
         return person
     }
     
     func deletePerson(person: Person) {
-        self.managedObjectContext.deleteObject(person)
+        if let moc = self.managedObjectContext {
+            moc.deleteObject(person)
+        }
     }
     
     func saveContext () {
-        var error: NSError? = nil
-        let managedObjectContext = self.managedObjectContext
-        if managedObjectContext != nil {
-            if managedObjectContext.hasChanges && !managedObjectContext.save(&error) {
-                println("Unresolved error \(error), \(error!.userInfo)")
+        if let moc = self.managedObjectContext {
+            var error: NSError? = nil
+            if moc.hasChanges && !moc.save(&error) {
+                NSLog("Unresolved error \(error), \(error!.userInfo)")
             }
         }
     }
