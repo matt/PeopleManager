@@ -97,7 +97,7 @@ class PeopleViewController: UITableViewController, NSFetchedResultsControllerDel
         definesPresentationContext = true
     }
     
-    // MARK: UITableViewDataSource
+    //MARK: UITableViewDataSource
     
     override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
         return fetchedResultsController.sections.count
@@ -142,7 +142,7 @@ class PeopleViewController: UITableViewController, NSFetchedResultsControllerDel
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
-    // MARK: NSFetchedResultsControllerDelegate
+    //MARK: NSFetchedResultsControllerDelegate
     
     func controllerWillChangeContent(controller: NSFetchedResultsController) {
         let tableView = currentTableView()
@@ -153,9 +153,9 @@ class PeopleViewController: UITableViewController, NSFetchedResultsControllerDel
     func controller(controller: NSFetchedResultsController!, didChangeSection sectionInfo: NSFetchedResultsSectionInfo!, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
         let tableView = currentTableView()
         
-        if type == NSFetchedResultsChangeInsert {
+        if type == .Insert {
             tableView.insertSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
-        } else if type == NSFetchedResultsChangeDelete {
+        } else if type == .Delete {
             tableView.deleteSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
         }
     }
@@ -163,11 +163,11 @@ class PeopleViewController: UITableViewController, NSFetchedResultsControllerDel
     func controller(controller: NSFetchedResultsController!, didChangeObject anObject: AnyObject!, atIndexPath indexPath: NSIndexPath!, forChangeType type:NSFetchedResultsChangeType, newIndexPath: NSIndexPath!) {
         let tableView = currentTableView()
         
-        if type == NSFetchedResultsChangeInsert {
+        if type == .Insert {
             tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Fade)
-        } else if type == NSFetchedResultsChangeUpdate {
+        } else if type == .Update {
             configureCell(tableView.cellForRowAtIndexPath(indexPath), person: anObject as Person)
-        } else if type == NSFetchedResultsChangeDelete {
+        } else if type == .Delete {
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
     }
@@ -210,7 +210,7 @@ class PeopleViewController: UITableViewController, NSFetchedResultsControllerDel
         cell.textLabel.attributedText = attrFullName
     }
     
-    // MARK: UISearchResultsUpdating
+    //MARK: UISearchResultsUpdating
     
     func updateSearchResultsForSearchController(searchController: UISearchController!) {
         fetchedResultsControllerWithSearchString(searchController.searchBar.text)
@@ -223,7 +223,7 @@ class PeopleViewController: UITableViewController, NSFetchedResultsControllerDel
         }
     }
     
-    // MARK: ManagePersonViewControllerDelegate
+    //MARK: ManagePersonViewControllerDelegate
     
     func doneManagingPerson(person: Person?) {
         let personDetailViewController = PersonDetailViewController(person: person!)

@@ -424,6 +424,7 @@
 				16C5A5081974629C008BC7CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		16C5A5091974629C008BC7CF /* Build configuration list for PBXNativeTarget "PeopleManagerTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +433,7 @@
 				16C5A50B1974629C008BC7CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

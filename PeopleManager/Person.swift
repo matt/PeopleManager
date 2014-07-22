@@ -18,7 +18,7 @@ class Person: NSManagedObject {
     }
     
     func firstLetterOfLastName() -> String {
-        let firstLetter = lastName.substringToIndex(1) as String
+        let firstLetter = lastName.substringToIndex(advance(lastName.startIndex, 1))
         
         return firstLetter.uppercaseString
     }

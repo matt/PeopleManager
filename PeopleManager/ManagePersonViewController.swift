@@ -14,10 +14,11 @@ protocol ManagePersonViewControllerDelegate {
 }
 
 class ManagePersonViewController: UIViewController, UITextFieldDelegate {
-    @IBOutlet var firstName: UITextField
-    @IBOutlet var lastName: UITextField
-    @IBOutlet var photoView: UIImageView
-    @IBOutlet var toolbar: UIToolbar
+    @IBOutlet weak var firstName: UITextField!
+    @IBOutlet weak var lastName: UITextField!
+    @IBOutlet weak var photoView: UIImageView!
+    @IBOutlet weak var toolbar: UIToolbar!
+
     
     var person: Person?
     var delegate: ManagePersonViewControllerDelegate?
@@ -120,7 +121,7 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
-    // MARK: UITextFieldDelegate
+    //MARK: UITextFieldDelegate
     
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
         if (textField == firstName) {

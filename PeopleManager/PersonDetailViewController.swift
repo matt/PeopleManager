@@ -9,8 +9,8 @@
 import UIKit
 
 class PersonDetailViewController: UIViewController, ManagePersonViewControllerDelegate {
-    @IBOutlet var fullName: UILabel
-    @IBOutlet var photoView: UIImageView
+    @IBOutlet weak var fullName: UILabel!
+    @IBOutlet weak var photoView: UIImageView!
     
     var person: Person?
     
@@ -51,7 +51,7 @@ class PersonDetailViewController: UIViewController, ManagePersonViewControllerDe
         presentViewController(navigationController, animated: false, completion: nil)
     }
     
-    // MARK: ManagePersonViewControllerDelegate
+    //MARK: ManagePersonViewControllerDelegate
     
     func doneManagingPerson(person: Person?) {
         self.person = person

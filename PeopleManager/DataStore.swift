@@ -22,7 +22,7 @@ class DataStore {
         return Static.instance!
     }
     
-    // #pragma mark - Core Data stack
+    //MARK: Core Data stack
     
     // Returns the managed object context for the application.
     // If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
@@ -65,7 +65,7 @@ class DataStore {
     }
     var _persistentStoreCoordinator: NSPersistentStoreCoordinator? = nil
     
-    // #pragma mark - Application's Documents directory
+    //MARK: Application's Documents directory
     
     var applicationDocumentsDirectory: NSURL {
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
