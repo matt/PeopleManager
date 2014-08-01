@@ -19,9 +19,10 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var photoView: UIImageView!
     @IBOutlet weak var toolbar: UIToolbar!
 
-    
     var person: Person?
     var delegate: ManagePersonViewControllerDelegate?
+    
+    let separatorColor = UIColor(red: 200/255.0, green: 199/255.0, blue: 204/255.0, alpha: 1.0)
     
     init(person: Person?, delegate: ManagePersonViewControllerDelegate) {
         self.person = person
@@ -48,17 +49,6 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate {
         navigationItem.rightBarButtonItem = doneItem;
         navigationItem.rightBarButtonItem.enabled = false;
         
-        let separatorColor = UIColor(red: 200/255.0, green: 199/255.0, blue: 204/255.0, alpha: 1.0)
-        
-        var firstNameUnderlineView = UIView(frame: CGRectMake(92, 45.75, 228, 0.5))
-        firstNameUnderlineView.backgroundColor = separatorColor
-        
-        var lastNameUnderlineView = UIView(frame: CGRectMake(92, 91.75, 228, 0.5))
-        lastNameUnderlineView.backgroundColor = separatorColor
-        
-        view.addSubview(firstNameUnderlineView)
-        view.addSubview(lastNameUnderlineView)
-        
         photoView.layer.cornerRadius = photoView.bounds.size.width / 2
         photoView.layer.masksToBounds = true
         photoView.layer.borderColor = separatorColor.CGColor
@@ -69,6 +59,19 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate {
         
         firstName.text = person?.firstName
         lastName.text = person?.lastName
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+
+        var firstNameUnderlineView = UIView(frame: CGRectMake(92, 45.75, view.frame.size.width - 92, 0.5))
+        firstNameUnderlineView.backgroundColor = separatorColor
+        
+        var lastNameUnderlineView = UIView(frame: CGRectMake(92, 91.75, view.frame.size.width - 92, 0.5))
+        lastNameUnderlineView.backgroundColor = separatorColor
+        NSLog("\(view.frame)")
+        view.addSubview(firstNameUnderlineView)
+        view.addSubview(lastNameUnderlineView)
     }
     
     func cancelTapped() {

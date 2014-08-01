@@ -39,9 +39,10 @@ class PeopleViewController: UITableViewController, NSFetchedResultsControllerDel
     }
     
     var fetchedResultsController: NSFetchedResultsController {
-    if !_fetchedResultsController {
-        fetchedResultsControllerWithSearchString("")
+        if !_fetchedResultsController {
+            return fetchedResultsControllerWithSearchString("")
         }
+            
         return _fetchedResultsController!
     }
     
@@ -58,19 +59,17 @@ class PeopleViewController: UITableViewController, NSFetchedResultsControllerDel
         }
     }
     
-    var searchController: UISearchController {
-    if !_searchController {
+    lazy var searchController: UISearchController = {
         let searchResultsController = UITableViewController()
         searchResultsController.tableView.dataSource = self
         searchResultsController.tableView.delegate = self
         
-        _searchController = UISearchController(searchResultsController: searchResultsController)
-        _searchController!.searchBar.frame = CGRectMake(0, 0, view.frame.size.width, 44)
-        _searchController!.searchResultsUpdater = self
-        }
-        return _searchController!
-    }
-    var _searchController: UISearchController? = nil
+        var searchController = UISearchController(searchResultsController: searchResultsController)
+        searchController.searchBar.frame = CGRectMake(0, 0, self.view.frame.size.width, 44)
+        searchController.searchResultsUpdater = self
+        
+        return searchController
+    }()
     
     let cellIdentifier = "personCell"
     
