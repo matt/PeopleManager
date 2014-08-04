@@ -23,8 +23,12 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate {
     var delegate: ManagePersonViewControllerDelegate?
     
     let separatorColor = UIColor(red: 200/255.0, green: 199/255.0, blue: 204/255.0, alpha: 1.0)
+
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
     
-    init(person: Person?, delegate: ManagePersonViewControllerDelegate) {
+    init(person: Person?, delegate: ManagePersonViewControllerDelegate?) {
         self.person = person
         self.delegate = delegate
         
@@ -36,7 +40,7 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate {
         
         edgesForExtendedLayout = .None
         
-        if person {
+        if person != nil {
             toolbar.hidden = false
         } else {
             title = "New Person"
@@ -81,7 +85,7 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate {
     func doneTapped() {
         var animated = false
         
-        if person {
+        if person != nil {
             person!.firstName = firstName.text
             person!.lastName = lastName.text
         } else {
@@ -96,7 +100,7 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func updateDoneButton(sender: AnyObject) {
         let emptyNameField = firstName.text.isEmpty || lastName.text.isEmpty
-        var modifiedName = person ? person!.firstName != firstName.text || person!.lastName != lastName.text : true
+        var modifiedName = person != nil ? person!.firstName != firstName.text || person!.lastName != lastName.text : true
         
         navigationItem.rightBarButtonItem.enabled = !emptyNameField && modifiedName
     }

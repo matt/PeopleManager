@@ -20,6 +20,10 @@ class PersonDetailViewController: UIViewController, ManagePersonViewControllerDe
         super.init(nibName: nil, bundle: nil)
     }
     
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,7 +43,7 @@ class PersonDetailViewController: UIViewController, ManagePersonViewControllerDe
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        if person {
+        if person != nil {
             fullName.text = person!.fullName()
         }
     }

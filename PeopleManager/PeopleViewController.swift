@@ -39,7 +39,7 @@ class PeopleViewController: UITableViewController, NSFetchedResultsControllerDel
     }
     
     var fetchedResultsController: NSFetchedResultsController {
-        if !_fetchedResultsController {
+        if _fetchedResultsController == nil {
             return fetchedResultsControllerWithSearchString("")
         }
             
@@ -119,7 +119,7 @@ class PeopleViewController: UITableViewController, NSFetchedResultsControllerDel
     
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
         var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as? UITableViewCell
-        if !cell {
+        if cell == nil {
             cell = UITableViewCell(style: .Default, reuseIdentifier: cellIdentifier)
         }
         
