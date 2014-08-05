@@ -14,14 +14,14 @@ class PersonDetailViewController: UIViewController, ManagePersonViewControllerDe
     
     var person: Person?
     
+    required init(coder aDecoder: NSCoder!) {
+        super.init(coder: aDecoder)
+    }
+    
     init(person: Person) {
         self.person = person
         
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init(coder aDecoder: NSCoder!) {
-        super.init(coder: aDecoder)
+        super.init(nibName: "PersonDetailViewController", bundle: nil)
     }
     
     override func viewDidLoad() {

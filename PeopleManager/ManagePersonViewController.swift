@@ -32,7 +32,7 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate {
         self.person = person
         self.delegate = delegate
         
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: "ManagePersonViewController", bundle: nil)
     }
     
     override func viewDidLoad() {
