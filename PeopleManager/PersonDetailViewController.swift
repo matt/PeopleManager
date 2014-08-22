@@ -13,15 +13,15 @@ class PersonDetailViewController: UIViewController, ManagePersonViewControllerDe
     @IBOutlet weak var photoView: UIImageView!
     
     var person: Person?
-    
-    required init(coder aDecoder: NSCoder!) {
-        super.init(coder: aDecoder)
-    }
-    
+
     init(person: Person) {
         self.person = person
         
         super.init(nibName: "PersonDetailViewController", bundle: nil)
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {

@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6198" systemVersion="13D65" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6220.8" systemVersion="13D65" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Person" representedClassName="PeopleManager.Person" syncable="YES">
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="personalCity" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="personalCountry" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="personalEmailAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="personalPhoneNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="personalPostalCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="personalState" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="personalStreetAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="personalStreetAddressTwo" optional="YES" attributeType="String" syncable="YES"/>
         <compoundIndexes>
             <compoundIndex>
                 <index value="lastName"/>
@@ -11,6 +19,6 @@
         </compoundIndexes>
     </entity>
     <elements>
-        <element name="Person" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Person" positionX="-63" positionY="-18" width="128" height="195"/>
     </elements>
 </model>

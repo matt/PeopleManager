@@ -11,7 +11,15 @@ import CoreData
 class Person: NSManagedObject {
     @NSManaged
     var firstName: String,
-    lastName: String
+    lastName: String,
+    personalPhoneNumber: String,
+    personalEmailAddress: String,
+    personalStreetAddress: String,
+    personalStreetAddressTwo: String,
+    personalCity: String,
+    personalState: String,
+    personalPostalCode: String,
+    personalCountry: String
     
     func fullName() -> String {
         return firstName + " " + lastName

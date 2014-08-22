@@ -69,7 +69,7 @@ class DataStore {
         return managedObjectContext
     }()
     
-    func createPersonWithFirstName(firstName: String, lastName: String) -> Person? {
+    func createPersonWithFirstName(firstName: String, lastName: String, personalPhoneNumber: String, personalEmailAddress: String, personalStreetAddress: String, personalStreetAddressTwo: String, personalCity: String, personalState: String, personalPostalCode: String, personalCountry: String) -> Person? {
         var person: Person?
         
         if let moc = self.managedObjectContext {
@@ -78,6 +78,14 @@ class DataStore {
             if person != nil {
                 person!.firstName = firstName
                 person!.lastName = lastName
+                person!.personalPhoneNumber = personalPhoneNumber
+                person!.personalEmailAddress = personalEmailAddress
+                person!.personalStreetAddress = personalStreetAddress
+                person!.personalStreetAddressTwo = personalStreetAddressTwo
+                person!.personalCity = personalCity
+                person!.personalState = personalState
+                person!.personalPostalCode = personalPostalCode
+                person!.personalCountry = personalCountry
             }
         }
         
@@ -89,6 +97,8 @@ class DataStore {
             moc.deleteObject(person)
         }
     }
+    
+    // MARK: - Core Data Saving support
     
     func saveContext () {
         if let moc = self.managedObjectContext {
