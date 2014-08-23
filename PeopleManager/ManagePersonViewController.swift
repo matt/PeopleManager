@@ -21,9 +21,9 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate, SubRegi
     @IBOutlet weak var personalStreetAddress: UITextField!
     @IBOutlet weak var personalStreetAddressTwo: UITextField!
     @IBOutlet weak var personalCity: UITextField!
-    @IBOutlet weak var personalState: UITextField!
+    @IBOutlet weak var personalSubRegion: UITextField!
     @IBOutlet weak var personalPostalCode: UITextField!
-    @IBOutlet weak var personalCountry: UITextField!
+    @IBOutlet weak var personalRegion: UITextField!
     @IBOutlet weak var photoView: UIImageView!
     @IBOutlet weak var toolbar: UIToolbar!
 
@@ -83,9 +83,9 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate, SubRegi
         personalStreetAddress.delegate = self
         personalStreetAddressTwo.delegate = self
         personalCity.delegate = self
-        personalState.delegate = self
+        personalSubRegion.delegate = self
         personalPostalCode.delegate = self
-        personalCountry.delegate = self
+        personalRegion.delegate = self
         
         firstName.text = person?.firstName
         lastName.text = person?.lastName
@@ -94,12 +94,12 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate, SubRegi
         personalStreetAddress.text = person?.personalStreetAddress
         personalStreetAddressTwo.text = person?.personalStreetAddressTwo
         personalCity.text = person?.personalCity
-        personalState.text = person?.personalState
+        personalSubRegion.text = person?.personalSubRegion
         personalPostalCode.text = person?.personalPostalCode
-        personalCountry.text = person?.personalCountry
+        personalRegion.text = person?.personalRegion
         
-        if personalCountry.text.isEmpty {
-            personalCountry.text = "United States"
+        if personalRegion.text.isEmpty {
+            personalRegion.text = "United States"
         }
     }
     
@@ -127,14 +127,14 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate, SubRegi
         var cityUnderlineView = UIView(frame: CGRectMake(16, 321.75, view.frame.size.width - 16, 0.5))
         cityUnderlineView.backgroundColor = separatorColor
         
-        var stateUnderlineView = UIView(frame: CGRectMake(16, 367.75, view.frame.size.width / 2 - 16, 0.5))
-        stateUnderlineView.backgroundColor = separatorColor
+        var subRegionUnderlineView = UIView(frame: CGRectMake(16, 367.75, view.frame.size.width / 2 - 16, 0.5))
+        subRegionUnderlineView.backgroundColor = separatorColor
         
-        var zipUnderlineView = UIView(frame: CGRectMake(view.frame.size.width / 2 + 16, 367.75, view.frame.size.width / 2 - 16, 0.5))
-        zipUnderlineView.backgroundColor = separatorColor
+        var postalUnderlineView = UIView(frame: CGRectMake(view.frame.size.width / 2 + 16, 367.75, view.frame.size.width / 2 - 16, 0.5))
+        postalUnderlineView.backgroundColor = separatorColor
         
-        var countryUnderlineView = UIView(frame: CGRectMake(16, 413.75, view.frame.size.width - 16, 0.5));
-        countryUnderlineView.backgroundColor = separatorColor
+        var regionUnderlineView = UIView(frame: CGRectMake(16, 413.75, view.frame.size.width - 16, 0.5));
+        regionUnderlineView.backgroundColor = separatorColor
         
         view.addSubview(firstNameUnderlineView)
         view.addSubview(lastNameUnderlineView)
@@ -143,9 +143,9 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate, SubRegi
         view.addSubview(streetUnderlineView)
         view.addSubview(streetTwoUnderlineView)
         view.addSubview(cityUnderlineView)
-        view.addSubview(stateUnderlineView)
-        view.addSubview(zipUnderlineView)
-        view.addSubview(countryUnderlineView)
+        view.addSubview(subRegionUnderlineView)
+        view.addSubview(postalUnderlineView)
+        view.addSubview(regionUnderlineView)
     }
     
     func cancelTapped() {
@@ -163,9 +163,9 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate, SubRegi
             person!.personalStreetAddress = personalStreetAddress.text
             person!.personalStreetAddressTwo = personalStreetAddressTwo.text
             person!.personalCity = personalCity.text
-            person!.personalState = personalState.text
+            person!.personalSubRegion = personalSubRegion.text
             person!.personalPostalCode = personalPostalCode.text
-            person!.personalCountry = personalCountry.text
+            person!.personalRegion = personalRegion.text
         } else {
             person = DataStore.sharedStore().createPersonWithFirstName(firstName.text,
                 lastName: lastName.text,
@@ -174,9 +174,9 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate, SubRegi
                 personalStreetAddress: personalStreetAddress.text,
                 personalStreetAddressTwo: personalStreetAddressTwo.text,
                 personalCity: personalCity.text,
-                personalState: personalState.text,
+                personalSubRegion: personalSubRegion.text,
                 personalPostalCode: personalPostalCode.text,
-                personalCountry: personalCountry.text
+                personalRegion: personalRegion.text
             )
             animated = true
         }
@@ -198,9 +198,9 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate, SubRegi
                             person!.personalStreetAddress != personalStreetAddress.text ||
                             person!.personalStreetAddressTwo != personalStreetAddressTwo.text ||
                             person!.personalCity != personalCity.text ||
-                            person!.personalState != personalState.text ||
+                            person!.personalSubRegion != personalSubRegion.text ||
                             person!.personalPostalCode != personalPostalCode.text ||
-                            person!.personalCountry != personalCountry.text
+                            person!.personalRegion != personalRegion.text
         }
         
         navigationItem.rightBarButtonItem.enabled = !emptyNameField && modifiedField
@@ -232,14 +232,14 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate, SubRegi
     // MARK: - UITextFieldDelegate
     
     func textFieldShouldBeginEditing(textField: UITextField!) -> Bool {
-        if textField == personalState {
-            let subRegionViewController = SubRegionViewController(country: personalCountry.text, title: personalState.placeholder, delegate: self)
+        if textField == personalSubRegion {
+            let subRegionViewController = SubRegionViewController(country: personalRegion.text, title: personalSubRegion.placeholder, delegate: self)
             let navigationController = UINavigationController(rootViewController: subRegionViewController)
             
             presentViewController(navigationController, animated: true, completion: nil)
             
             return false;
-        } else if textField == personalCountry {
+        } else if textField == personalRegion {
             let regionViewController = RegionViewController(delegate: self)
             let navigationController = UINavigationController(rootViewController: regionViewController)
             
@@ -264,24 +264,24 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate, SubRegi
     // MARK: - SubRegionViewControllerDelegate
     
     func doneSelectingSubRegion(subRegion: String) {
-        if personalState.text != subRegion {
-            personalState.text = subRegion
+        if personalSubRegion.text != subRegion {
+            personalSubRegion.text = subRegion
             
-            updateDoneButton(personalState)
+            updateDoneButton(personalSubRegion)
         }
     }
     
     // MARK: - RegionViewControllerDelegate
     
     func doneSelectingRegion(region: String) {
-        if personalCountry.text != region {
-            personalCountry.text = region
-            personalState.placeholder = regionTerminologyMapping[region]!["subRegionName"]
-            personalState.text = ""
+        if personalRegion.text != region {
+            personalRegion.text = region
+            personalSubRegion.placeholder = regionTerminologyMapping[region]!["subRegionName"]
+            personalSubRegion.text = ""
             personalPostalCode.placeholder = regionTerminologyMapping[region]!["postalCodeName"]
             personalPostalCode.text = ""
             
-            updateDoneButton(personalCountry)
+            updateDoneButton(personalRegion)
         }
     }
 }

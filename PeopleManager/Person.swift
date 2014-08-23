@@ -17,9 +17,9 @@ class Person: NSManagedObject {
     personalStreetAddress: String,
     personalStreetAddressTwo: String,
     personalCity: String,
-    personalState: String,
+    personalSubRegion: String,
     personalPostalCode: String,
-    personalCountry: String
+    personalRegion: String
     
     func fullName() -> String {
         return firstName + " " + lastName
