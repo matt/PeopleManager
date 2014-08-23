@@ -13,7 +13,7 @@ protocol ManagePersonViewControllerDelegate {
     func personDeleted()
 }
 
-class ManagePersonViewController: UIViewController, UITextFieldDelegate {
+class ManagePersonViewController: UIViewController, UITextFieldDelegate, SubRegionViewControllerDelegate, RegionViewControllerDelegate {
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var personalPhoneNumber: UITextField!
@@ -29,6 +29,16 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate {
 
     var person: Person?
     var delegate: ManagePersonViewControllerDelegate?
+    
+    let regionTerminologyMapping: [String: [String: String]] = {
+        var error: NSError? = nil
+        let filePath = NSBundle.mainBundle().pathForResource("countries", ofType: "json")
+        let data = NSData.dataWithContentsOfFile(filePath!, options: nil, error: &error)
+        
+        let regionObjs = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &error) as [String: [String: String]]!
+        
+        return regionObjs
+        }()
     
     let separatorColor = UIColor(red: 200/255.0, green: 199/255.0, blue: 204/255.0, alpha: 1.0)
     
@@ -68,6 +78,14 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate {
         
         firstName.delegate = self
         lastName.delegate = self
+        personalPhoneNumber.delegate = self
+        personalEmailAddress.delegate = self
+        personalStreetAddress.delegate = self
+        personalStreetAddressTwo.delegate = self
+        personalCity.delegate = self
+        personalState.delegate = self
+        personalPostalCode.delegate = self
+        personalCountry.delegate = self
         
         firstName.text = person?.firstName
         lastName.text = person?.lastName
@@ -79,6 +97,10 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate {
         personalState.text = person?.personalState
         personalPostalCode.text = person?.personalPostalCode
         personalCountry.text = person?.personalCountry
+        
+        if personalCountry.text.isEmpty {
+            personalCountry.text = "United States"
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -209,13 +231,57 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: - UITextFieldDelegate
     
+    func textFieldShouldBeginEditing(textField: UITextField!) -> Bool {
+        if textField == personalState {
+            let subRegionViewController = SubRegionViewController(country: personalCountry.text, title: personalState.placeholder, delegate: self)
+            let navigationController = UINavigationController(rootViewController: subRegionViewController)
+            
+            presentViewController(navigationController, animated: true, completion: nil)
+            
+            return false;
+        } else if textField == personalCountry {
+            let regionViewController = RegionViewController(delegate: self)
+            let navigationController = UINavigationController(rootViewController: regionViewController)
+            
+            presentViewController(navigationController, animated: true, completion: nil)
+            
+            return false;
+        }
+        
+        return true;
+    }
+    
     func textFieldShouldReturn(textField: UITextField!) -> Bool {
-        if (textField == firstName) {
+        if textField == firstName {
             lastName.becomeFirstResponder()
         } else {
             firstName.becomeFirstResponder()
         }
         
         return true;
+    }
+    
+    // MARK: - SubRegionViewControllerDelegate
+    
+    func doneSelectingSubRegion(subRegion: String) {
+        if personalState.text != subRegion {
+            personalState.text = subRegion
+            
+            updateDoneButton(personalState)
+        }
+    }
+    
+    // MARK: - RegionViewControllerDelegate
+    
+    func doneSelectingRegion(region: String) {
+        if personalCountry.text != region {
+            personalCountry.text = region
+            personalState.placeholder = regionTerminologyMapping[region]!["subRegionName"]
+            personalState.text = ""
+            personalPostalCode.placeholder = regionTerminologyMapping[region]!["postalCodeName"]
+            personalPostalCode.text = ""
+            
+            updateDoneButton(personalCountry)
+        }
     }
 }

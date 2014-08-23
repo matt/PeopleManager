@@ -9,7 +9,7 @@
                 <outlet property="firstName" destination="8xM-1x-k75" id="fpC-g5-Dyj"/>
                 <outlet property="lastName" destination="zlz-pP-e7t" id="7hr-zO-PLN"/>
                 <outlet property="personalCity" destination="9Nt-Mq-lxw" id="ZWt-KJ-XRT"/>
-                <outlet property="personalCountry" destination="IXR-Da-4D0" id="zll-1A-11G"/>
+                <outlet property="personalCountry" destination="IXR-Da-4D0" id="9oc-4Z-zzc"/>
                 <outlet property="personalEmailAddress" destination="iup-V2-kYD" id="8dC-Qr-Fbz"/>
                 <outlet property="personalPhoneNumber" destination="Rdk-VE-KHj" id="KNm-N6-mbd"/>
                 <outlet property="personalPostalCode" destination="xw0-jE-uzs" id="bcg-a2-KnQ"/>
@@ -33,7 +33,7 @@
                         <constraint firstAttribute="width" constant="60" id="9Ll-nh-XRB"/>
                     </constraints>
                 </imageView>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8xM-1x-k75">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8xM-1x-k75">
                     <rect key="frame" x="92" y="10" width="228" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="bLb-zd-jN7"/>
@@ -45,7 +45,7 @@
                         <action selector="updateDoneButton:" destination="-1" eventType="touchCancel" id="ZFM-SP-JaU"/>
                     </connections>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zlz-pP-e7t">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zlz-pP-e7t">
                     <rect key="frame" x="92" y="56" width="228" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="JFa-M0-BQu"/>
@@ -57,13 +57,94 @@
                         <action selector="updateDoneButton:" destination="-1" eventType="editingChanged" id="Rpr-Ha-uFK"/>
                     </connections>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rdk-VE-KHj">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Rdk-VE-KHj">
                     <rect key="frame" x="16" y="102" width="304" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="Ly1-RJ-zDe"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                    <connections>
+                        <action selector="updateDoneButton:" destination="-1" eventType="editingChanged" id="DNi-sR-iZD"/>
+                        <action selector="updateDoneButton:" destination="-1" eventType="touchCancel" id="k80-14-IRb"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="iup-V2-kYD">
+                    <rect key="frame" x="16" y="148" width="304" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="ahG-Ci-aC5"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                    <connections>
+                        <action selector="updateDoneButton:" destination="-1" eventType="editingChanged" id="Nef-sJ-mwP"/>
+                        <action selector="updateDoneButton:" destination="-1" eventType="touchCancel" id="Sxz-hS-uyI"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Street" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="LzL-s9-EWJ">
+                    <rect key="frame" x="16" y="194" width="304" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="lyt-c6-lWR"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                    <connections>
+                        <action selector="updateDoneButton:" destination="-1" eventType="touchCancel" id="b1K-ww-j8k"/>
+                        <action selector="updateDoneButton:" destination="-1" eventType="editingChanged" id="onC-Nh-UVc"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Street" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="938-3g-Mhz">
+                    <rect key="frame" x="16" y="240" width="304" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="De1-gi-lyy"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                    <connections>
+                        <action selector="updateDoneButton:" destination="-1" eventType="touchCancel" id="Ah9-Ri-xld"/>
+                        <action selector="updateDoneButton:" destination="-1" eventType="editingChanged" id="RWP-qC-7dP"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9Nt-Mq-lxw">
+                    <rect key="frame" x="16" y="286" width="304" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="AOY-ng-rxz"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                    <connections>
+                        <action selector="updateDoneButton:" destination="-1" eventType="editingChanged" id="aul-n3-dCM"/>
+                        <action selector="updateDoneButton:" destination="-1" eventType="touchCancel" id="kpm-w5-9Oe"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="P0W-Fr-ibI">
+                    <rect key="frame" x="16" y="332" width="144" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="4hN-ZP-HXr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Zip" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xw0-jE-uzs">
+                    <rect key="frame" x="176" y="332" width="144" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="3U4-gR-ITv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                    <connections>
+                        <action selector="updateDoneButton:" destination="-1" eventType="valueChanged" id="cqE-xd-Mqz"/>
+                        <action selector="updateDoneButton:" destination="-1" eventType="editingChanged" id="n1U-Jw-m8f"/>
+                        <action selector="updateDoneButton:" destination="-1" eventType="touchCancel" id="sly-U0-Hsd"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Country" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="IXR-Da-4D0">
+                    <rect key="frame" x="16" y="378" width="304" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="qTS-LJ-IG9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                 </textField>
                 <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F5z-5n-BKA">
                     <rect key="frame" x="0.0" y="460" width="320" height="44"/>
@@ -79,62 +160,6 @@
                         </barButtonItem>
                     </items>
                 </toolbar>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iup-V2-kYD">
-                    <rect key="frame" x="16" y="148" width="304" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="ahG-Ci-aC5"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Street" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LzL-s9-EWJ">
-                    <rect key="frame" x="16" y="194" width="304" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="lyt-c6-lWR"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Street" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="938-3g-Mhz">
-                    <rect key="frame" x="16" y="240" width="304" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="De1-gi-lyy"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Nt-Mq-lxw">
-                    <rect key="frame" x="16" y="286" width="304" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="AOY-ng-rxz"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="State" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P0W-Fr-ibI">
-                    <rect key="frame" x="16" y="332" width="144" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="4hN-ZP-HXr"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Zip" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xw0-jE-uzs">
-                    <rect key="frame" x="176" y="332" width="144" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="3U4-gR-ITv"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Country" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IXR-Da-4D0">
-                    <rect key="frame" x="16" y="378" width="304" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="qTS-LJ-IG9"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
@@ -149,7 +174,6 @@
                 <constraint firstAttribute="trailing" secondItem="iup-V2-kYD" secondAttribute="trailing" id="GYT-wL-eZD"/>
                 <constraint firstItem="8xM-1x-k75" firstAttribute="leading" secondItem="uNd-ds-9sA" secondAttribute="trailing" constant="16" id="J3c-gf-FHJ"/>
                 <constraint firstItem="uNd-ds-9sA" firstAttribute="leading" secondItem="TTq-KP-Bok" secondAttribute="leading" constant="16" id="JtX-0O-2BF"/>
-                <constraint firstItem="IXR-Da-4D0" firstAttribute="top" secondItem="xw0-jE-uzs" secondAttribute="bottom" constant="16" id="KLz-RY-GnV"/>
                 <constraint firstItem="IXR-Da-4D0" firstAttribute="top" secondItem="P0W-Fr-ibI" secondAttribute="bottom" constant="16" id="NRU-XG-sKK"/>
                 <constraint firstItem="P0W-Fr-ibI" firstAttribute="leading" secondItem="TTq-KP-Bok" secondAttribute="leading" constant="16" id="W7J-gE-wVI"/>
                 <constraint firstItem="8xM-1x-k75" firstAttribute="top" secondItem="TTq-KP-Bok" secondAttribute="top" constant="10" id="WEi-Df-gug"/>

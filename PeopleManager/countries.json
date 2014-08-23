@@ -1,0 +1,12 @@
+{
+    "Canada": {
+        "abbreviation": "CA",
+        "subRegionName": "Province",
+        "postalCodeName": "Postal"
+    },
+    "United States": {
+        "abbreviation": "US",
+        "subRegionName": "State",
+        "postalCodeName": "Zip"
+    }
+}

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16106D0819A9402200D63EB2 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 16106D0719A9402200D63EB2 /* countries.json */; };
+		16106D0C19A9403F00D63EB2 /* Canada.json in Resources */ = {isa = PBXBuildFile; fileRef = 16106D0B19A9403F00D63EB2 /* Canada.json */; };
+		16106D0E19A940AC00D63EB2 /* United States.json in Resources */ = {isa = PBXBuildFile; fileRef = 16106D0D19A940AC00D63EB2 /* United States.json */; };
+		16106D1019A9411200D63EB2 /* RegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16106D0F19A9411200D63EB2 /* RegionViewController.swift */; };
+		16106D1219A9413F00D63EB2 /* SubRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16106D1119A9413F00D63EB2 /* SubRegionViewController.swift */; };
 		16C5A4ED1974629C008BC7CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5A4EC1974629C008BC7CF /* AppDelegate.swift */; };
 		16C5A4F01974629C008BC7CF /* PeopleManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 16C5A4EE1974629C008BC7CF /* PeopleManager.xcdatamodeld */; };
 		16C5A4F71974629C008BC7CF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16C5A4F61974629C008BC7CF /* Images.xcassets */; };
@@ -31,6 +36,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		16106D0719A9402200D63EB2 /* countries.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
+		16106D0B19A9403F00D63EB2 /* Canada.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Canada.json; sourceTree = "<group>"; };
+		16106D0D19A940AC00D63EB2 /* United States.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "United States.json"; sourceTree = "<group>"; };
+		16106D0F19A9411200D63EB2 /* RegionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionViewController.swift; sourceTree = "<group>"; };
+		16106D1119A9413F00D63EB2 /* SubRegionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubRegionViewController.swift; sourceTree = "<group>"; };
 		16C5A4E71974629C008BC7CF /* PeopleManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeopleManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16C5A4EB1974629C008BC7CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16C5A4EC1974629C008BC7CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +76,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		16106D0419A93FE800D63EB2 /* Address Data */ = {
+			isa = PBXGroup;
+			children = (
+				16106D0519A93FF600D63EB2 /* Country/Region */,
+				16106D0619A9400100D63EB2 /* State/Province/Territory */,
+			);
+			name = "Address Data";
+			sourceTree = "<group>";
+		};
+		16106D0519A93FF600D63EB2 /* Country/Region */ = {
+			isa = PBXGroup;
+			children = (
+				16106D0719A9402200D63EB2 /* countries.json */,
+			);
+			name = Country/Region;
+			sourceTree = "<group>";
+		};
+		16106D0619A9400100D63EB2 /* State/Province/Territory */ = {
+			isa = PBXGroup;
+			children = (
+				16106D0B19A9403F00D63EB2 /* Canada.json */,
+				16106D0D19A940AC00D63EB2 /* United States.json */,
+			);
+			name = State/Province/Territory;
+			sourceTree = "<group>";
+		};
 		16C5A4DE1974629C008BC7CF = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +123,7 @@
 		16C5A4E91974629C008BC7CF /* PeopleManager */ = {
 			isa = PBXGroup;
 			children = (
+				16106D0419A93FE800D63EB2 /* Address Data */,
 				16C5A50C19746320008BC7CF /* Core Data */,
 				16C5A4EC1974629C008BC7CF /* AppDelegate.swift */,
 				16C5A512197464BF008BC7CF /* PeopleViewController.swift */,
@@ -94,6 +131,8 @@
 				16C5A5181974673D008BC7CF /* ManagePersonViewController.xib */,
 				16C5A516197466C2008BC7CF /* PersonDetailViewController.swift */,
 				16C5A51A19746C5C008BC7CF /* PersonDetailViewController.xib */,
+				16106D0F19A9411200D63EB2 /* RegionViewController.swift */,
+				16106D1119A9413F00D63EB2 /* SubRegionViewController.swift */,
 				16C5A4F61974629C008BC7CF /* Images.xcassets */,
 				16C5A4EA1974629C008BC7CF /* Supporting Files */,
 			);
@@ -223,8 +262,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16106D0C19A9403F00D63EB2 /* Canada.json in Resources */,
+				16106D0E19A940AC00D63EB2 /* United States.json in Resources */,
 				16C5A51B19746C5C008BC7CF /* PersonDetailViewController.xib in Resources */,
 				16C5A4F71974629C008BC7CF /* Images.xcassets in Resources */,
+				16106D0819A9402200D63EB2 /* countries.json in Resources */,
 				16C5A5191974673D008BC7CF /* ManagePersonViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,10 +285,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16106D1019A9411200D63EB2 /* RegionViewController.swift in Sources */,
 				16C5A513197464BF008BC7CF /* PeopleViewController.swift in Sources */,
 				16C5A4F01974629C008BC7CF /* PeopleManager.xcdatamodeld in Sources */,
 				16C5A517197466C2008BC7CF /* PersonDetailViewController.swift in Sources */,
 				16C5A50E19746334008BC7CF /* DataStore.swift in Sources */,
+				16106D1219A9413F00D63EB2 /* SubRegionViewController.swift in Sources */,
 				16C5A51519746607008BC7CF /* ManagePersonViewController.swift in Sources */,
 				16C5A51119746424008BC7CF /* Person.swift in Sources */,
 				16C5A4ED1974629C008BC7CF /* AppDelegate.swift in Sources */,
