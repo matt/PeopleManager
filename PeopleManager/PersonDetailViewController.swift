@@ -17,6 +17,7 @@ class PersonDetailViewController: UIViewController, ManagePersonViewControllerDe
     @IBOutlet weak var personalSubSubRegionSubRegionPostalCode: UILabel!
     @IBOutlet weak var personalRegion: UILabel!
     @IBOutlet weak var photoView: UIImageView!
+    @IBOutlet weak var personalStreetAddressTwoHeightConstraint: NSLayoutConstraint!
     
     var person: Person?
     
@@ -66,6 +67,8 @@ class PersonDetailViewController: UIViewController, ManagePersonViewControllerDe
             personalStreetAddressTwo.text = person!.personalStreetAddressTwo
             personalSubSubRegionSubRegionPostalCode.text = person!.personalSubSubRegionSubRegionPostalCode()
             personalRegion.text = person!.personalRegion
+            
+            personalStreetAddressTwoHeightConstraint.constant = personalStreetAddressTwo.text.isEmpty ? 0.0 : 25.0
         }
     }
     

@@ -12,6 +12,7 @@
                 <outlet property="personalRegion" destination="IP4-rl-H4O" id="rFx-07-hIa"/>
                 <outlet property="personalStreetAddress" destination="qui-nI-G2Q" id="Or0-zn-MgE"/>
                 <outlet property="personalStreetAddressTwo" destination="AWQ-OT-Hzq" id="oCc-cZ-pqj"/>
+                <outlet property="personalStreetAddressTwoHeightConstraint" destination="ug8-TY-VCO" id="fwS-UY-ZpT"/>
                 <outlet property="personalSubSubRegionSubRegionPostalCode" destination="VPj-W8-GxP" id="Zph-om-KRD"/>
                 <outlet property="photoView" destination="wUN-Ge-kRq" id="1e5-if-Rhg"/>
                 <outlet property="view" destination="IrG-Dr-iWI" id="3xE-7o-L0n"/>
