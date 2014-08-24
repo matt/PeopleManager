@@ -69,7 +69,7 @@ class DataStore {
         return managedObjectContext
     }()
     
-    func createPersonWithFirstName(firstName: String, lastName: String, personalPhoneNumber: String, personalEmailAddress: String, personalStreetAddress: String, personalStreetAddressTwo: String, personalCity: String, personalSubRegion: String, personalPostalCode: String, personalRegion: String) -> Person? {
+    func createPersonWithFirstName(firstName: String, lastName: String, personalPhoneNumber: String, personalEmailAddress: String, personalStreetAddress: String, personalStreetAddressTwo: String, personalSubSubRegion: String, personalSubRegion: String, personalPostalCode: String, personalRegion: String) -> Person? {
         var person: Person?
         
         if let moc = self.managedObjectContext {
@@ -82,7 +82,7 @@ class DataStore {
                 person!.personalEmailAddress = personalEmailAddress
                 person!.personalStreetAddress = personalStreetAddress
                 person!.personalStreetAddressTwo = personalStreetAddressTwo
-                person!.personalCity = personalCity
+                person!.personalSubSubRegion = personalSubSubRegion
                 person!.personalSubRegion = personalSubRegion
                 person!.personalPostalCode = personalPostalCode
                 person!.personalRegion = personalRegion

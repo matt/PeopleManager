@@ -16,7 +16,7 @@ class Person: NSManagedObject {
     personalEmailAddress: String,
     personalStreetAddress: String,
     personalStreetAddressTwo: String,
-    personalCity: String,
+    personalSubSubRegion: String,
     personalSubRegion: String,
     personalPostalCode: String,
     personalRegion: String

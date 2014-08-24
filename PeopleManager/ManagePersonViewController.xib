@@ -8,7 +8,6 @@
             <connections>
                 <outlet property="firstName" destination="8xM-1x-k75" id="fpC-g5-Dyj"/>
                 <outlet property="lastName" destination="zlz-pP-e7t" id="7hr-zO-PLN"/>
-                <outlet property="personalCity" destination="9Nt-Mq-lxw" id="ZWt-KJ-XRT"/>
                 <outlet property="personalEmailAddress" destination="iup-V2-kYD" id="8dC-Qr-Fbz"/>
                 <outlet property="personalPhoneNumber" destination="Rdk-VE-KHj" id="KNm-N6-mbd"/>
                 <outlet property="personalPostalCode" destination="xw0-jE-uzs" id="bcg-a2-KnQ"/>
@@ -16,6 +15,7 @@
                 <outlet property="personalStreetAddress" destination="LzL-s9-EWJ" id="hxy-48-aCG"/>
                 <outlet property="personalStreetAddressTwo" destination="938-3g-Mhz" id="2ze-rP-6J2"/>
                 <outlet property="personalSubRegion" destination="P0W-Fr-ibI" id="MHK-06-8hb"/>
+                <outlet property="personalSubSubRegion" destination="9Nt-Mq-lxw" id="UnN-nU-Mgs"/>
                 <outlet property="photoView" destination="uNd-ds-9sA" id="mum-3q-C4B"/>
                 <outlet property="toolbar" destination="F5z-5n-BKA" id="IHT-ya-2Ox"/>
                 <outlet property="view" destination="TTq-KP-Bok" id="eBT-rx-12a"/>

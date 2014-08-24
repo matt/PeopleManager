@@ -1,11 +1,19 @@
 {
+    "Australia": {
+        "abbreviation": "AU",
+        "subSubRegionName": "Suburb",
+        "subRegionName": "State",
+        "postalCodeName": "Postal"
+    },
     "Canada": {
         "abbreviation": "CA",
+        "subSubRegionName": "City",
         "subRegionName": "Province",
         "postalCodeName": "Postal"
     },
     "United States": {
         "abbreviation": "US",
+        "subSubRegionName": "City",
         "subRegionName": "State",
         "postalCodeName": "Zip"
     }

@@ -20,7 +20,7 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate, SubRegi
     @IBOutlet weak var personalEmailAddress: UITextField!
     @IBOutlet weak var personalStreetAddress: UITextField!
     @IBOutlet weak var personalStreetAddressTwo: UITextField!
-    @IBOutlet weak var personalCity: UITextField!
+    @IBOutlet weak var personalSubSubRegion: UITextField!
     @IBOutlet weak var personalSubRegion: UITextField!
     @IBOutlet weak var personalPostalCode: UITextField!
     @IBOutlet weak var personalRegion: UITextField!
@@ -82,7 +82,7 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate, SubRegi
         personalEmailAddress.delegate = self
         personalStreetAddress.delegate = self
         personalStreetAddressTwo.delegate = self
-        personalCity.delegate = self
+        personalSubSubRegion.delegate = self
         personalSubRegion.delegate = self
         personalPostalCode.delegate = self
         personalRegion.delegate = self
@@ -93,13 +93,16 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate, SubRegi
         personalEmailAddress.text = person?.personalEmailAddress
         personalStreetAddress.text = person?.personalStreetAddress
         personalStreetAddressTwo.text = person?.personalStreetAddressTwo
-        personalCity.text = person?.personalCity
+        personalSubSubRegion.text = person?.personalSubSubRegion
         personalSubRegion.text = person?.personalSubRegion
         personalPostalCode.text = person?.personalPostalCode
         personalRegion.text = person?.personalRegion
         
         if personalRegion.text.isEmpty {
             personalRegion.text = "United States"
+        } else {
+            personalSubSubRegion.placeholder = regionTerminologyMapping[personalRegion.text]!["subSubRegionName"]
+            personalSubRegion.placeholder = regionTerminologyMapping[personalRegion.text]!["subRegionName"]
         }
     }
     
@@ -162,7 +165,7 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate, SubRegi
             person!.personalEmailAddress = personalEmailAddress.text
             person!.personalStreetAddress = personalStreetAddress.text
             person!.personalStreetAddressTwo = personalStreetAddressTwo.text
-            person!.personalCity = personalCity.text
+            person!.personalSubSubRegion = personalSubSubRegion.text
             person!.personalSubRegion = personalSubRegion.text
             person!.personalPostalCode = personalPostalCode.text
             person!.personalRegion = personalRegion.text
@@ -173,7 +176,7 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate, SubRegi
                 personalEmailAddress: personalEmailAddress.text,
                 personalStreetAddress: personalStreetAddress.text,
                 personalStreetAddressTwo: personalStreetAddressTwo.text,
-                personalCity: personalCity.text,
+                personalSubSubRegion: personalSubSubRegion.text,
                 personalSubRegion: personalSubRegion.text,
                 personalPostalCode: personalPostalCode.text,
                 personalRegion: personalRegion.text
@@ -197,7 +200,7 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate, SubRegi
                             person!.personalEmailAddress != personalEmailAddress.text ||
                             person!.personalStreetAddress != personalStreetAddress.text ||
                             person!.personalStreetAddressTwo != personalStreetAddressTwo.text ||
-                            person!.personalCity != personalCity.text ||
+                            person!.personalSubSubRegion != personalSubSubRegion.text ||
                             person!.personalSubRegion != personalSubRegion.text ||
                             person!.personalPostalCode != personalPostalCode.text ||
                             person!.personalRegion != personalRegion.text
@@ -276,6 +279,7 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate, SubRegi
     func doneSelectingRegion(region: String) {
         if personalRegion.text != region {
             personalRegion.text = region
+            personalSubSubRegion.placeholder = regionTerminologyMapping[region]!["subSubRegionName"]
             personalSubRegion.placeholder = regionTerminologyMapping[region]!["subRegionName"]
             personalSubRegion.text = ""
             personalPostalCode.placeholder = regionTerminologyMapping[region]!["postalCodeName"]

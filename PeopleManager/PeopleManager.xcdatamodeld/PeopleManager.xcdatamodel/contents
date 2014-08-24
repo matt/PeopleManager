@@ -3,7 +3,6 @@
     <entity name="Person" representedClassName="PeopleManager.Person" syncable="YES">
         <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="personalCity" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="personalEmailAddress" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="personalPhoneNumber" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="personalPostalCode" optional="YES" attributeType="String" syncable="YES"/>
@@ -11,6 +10,7 @@
         <attribute name="personalStreetAddress" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="personalStreetAddressTwo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="personalSubRegion" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="personalSubSubRegion" optional="YES" attributeType="String" syncable="YES"/>
         <compoundIndexes>
             <compoundIndex>
                 <index value="lastName"/>

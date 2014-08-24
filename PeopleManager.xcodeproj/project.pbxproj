@@ -12,6 +12,7 @@
 		16106D0E19A940AC00D63EB2 /* United States.json in Resources */ = {isa = PBXBuildFile; fileRef = 16106D0D19A940AC00D63EB2 /* United States.json */; };
 		16106D1019A9411200D63EB2 /* RegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16106D0F19A9411200D63EB2 /* RegionViewController.swift */; };
 		16106D1219A9413F00D63EB2 /* SubRegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16106D1119A9413F00D63EB2 /* SubRegionViewController.swift */; };
+		16106D1419A9739C00D63EB2 /* Australia.json in Resources */ = {isa = PBXBuildFile; fileRef = 16106D1319A9739C00D63EB2 /* Australia.json */; };
 		16C5A4ED1974629C008BC7CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C5A4EC1974629C008BC7CF /* AppDelegate.swift */; };
 		16C5A4F01974629C008BC7CF /* PeopleManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 16C5A4EE1974629C008BC7CF /* PeopleManager.xcdatamodeld */; };
 		16C5A4F71974629C008BC7CF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16C5A4F61974629C008BC7CF /* Images.xcassets */; };
@@ -41,6 +42,7 @@
 		16106D0D19A940AC00D63EB2 /* United States.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "United States.json"; sourceTree = "<group>"; };
 		16106D0F19A9411200D63EB2 /* RegionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionViewController.swift; sourceTree = "<group>"; };
 		16106D1119A9413F00D63EB2 /* SubRegionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubRegionViewController.swift; sourceTree = "<group>"; };
+		16106D1319A9739C00D63EB2 /* Australia.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Australia.json; sourceTree = "<group>"; };
 		16C5A4E71974629C008BC7CF /* PeopleManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeopleManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16C5A4EB1974629C008BC7CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16C5A4EC1974629C008BC7CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		16106D0619A9400100D63EB2 /* State/Province/Territory */ = {
 			isa = PBXGroup;
 			children = (
+				16106D1319A9739C00D63EB2 /* Australia.json */,
 				16106D0B19A9403F00D63EB2 /* Canada.json */,
 				16106D0D19A940AC00D63EB2 /* United States.json */,
 			);
@@ -268,6 +271,7 @@
 				16C5A4F71974629C008BC7CF /* Images.xcassets in Resources */,
 				16106D0819A9402200D63EB2 /* countries.json in Resources */,
 				16C5A5191974673D008BC7CF /* ManagePersonViewController.xib in Resources */,
+				16106D1419A9739C00D63EB2 /* Australia.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
