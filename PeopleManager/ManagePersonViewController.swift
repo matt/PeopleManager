@@ -115,28 +115,28 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate, SubRegi
         var lastNameUnderlineView = UIView(frame: CGRectMake(92, 91.75, view.frame.size.width - 92, 0.5))
         lastNameUnderlineView.backgroundColor = separatorColor
         
-        var phoneUnderlineView = UIView(frame: CGRectMake(16, 137.75, view.frame.size.width - 16, 0.5))
+        var phoneUnderlineView = UIView(frame: CGRectMake(16, 153.75, view.frame.size.width - 16, 0.5))
         phoneUnderlineView.backgroundColor = separatorColor
         
-        var emailUnderlineView = UIView(frame: CGRectMake(16, 183.75, view.frame.size.width - 16, 0.5))
+        var emailUnderlineView = UIView(frame: CGRectMake(16, 199.75, view.frame.size.width - 16, 0.5))
         emailUnderlineView.backgroundColor = separatorColor
         
-        var streetUnderlineView = UIView(frame: CGRectMake(16, 229.75, view.frame.size.width - 16, 0.5))
+        var streetUnderlineView = UIView(frame: CGRectMake(16, 261.75, view.frame.size.width - 16, 0.5))
         streetUnderlineView.backgroundColor = separatorColor
         
-        var streetTwoUnderlineView = UIView(frame: CGRectMake(16, 275.75, view.frame.size.width - 16, 0.5))
+        var streetTwoUnderlineView = UIView(frame: CGRectMake(16, 307.75, view.frame.size.width - 16, 0.5))
         streetTwoUnderlineView.backgroundColor = separatorColor
         
-        var cityUnderlineView = UIView(frame: CGRectMake(16, 321.75, view.frame.size.width - 16, 0.5))
+        var cityUnderlineView = UIView(frame: CGRectMake(16, 353.75, view.frame.size.width - 16, 0.5))
         cityUnderlineView.backgroundColor = separatorColor
         
-        var subRegionUnderlineView = UIView(frame: CGRectMake(16, 367.75, view.frame.size.width / 2 - 16, 0.5))
+        var subRegionUnderlineView = UIView(frame: CGRectMake(16, 399.75, view.frame.size.width / 2 - 16, 0.5))
         subRegionUnderlineView.backgroundColor = separatorColor
         
-        var postalUnderlineView = UIView(frame: CGRectMake(view.frame.size.width / 2 + 16, 367.75, view.frame.size.width / 2 - 16, 0.5))
+        var postalUnderlineView = UIView(frame: CGRectMake(view.frame.size.width / 2 + 16, 399.75, view.frame.size.width / 2 - 16, 0.5))
         postalUnderlineView.backgroundColor = separatorColor
         
-        var regionUnderlineView = UIView(frame: CGRectMake(16, 413.75, view.frame.size.width - 16, 0.5));
+        var regionUnderlineView = UIView(frame: CGRectMake(16, 445.75, view.frame.size.width - 16, 0.5));
         regionUnderlineView.backgroundColor = separatorColor
         
         view.addSubview(firstNameUnderlineView)
