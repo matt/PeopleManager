@@ -10,9 +10,17 @@ import UIKit
 
 class PersonDetailViewController: UIViewController, ManagePersonViewControllerDelegate {
     @IBOutlet weak var fullName: UILabel!
+    @IBOutlet weak var personalPhone: UILabel!
+    @IBOutlet weak var personalEmail: UILabel!
+    @IBOutlet weak var personalStreetAddress: UILabel!
+    @IBOutlet weak var personalStreetAddressTwo: UILabel!
+    @IBOutlet weak var personalSubSubRegionSubRegionPostalCode: UILabel!
+    @IBOutlet weak var personalRegion: UILabel!
     @IBOutlet weak var photoView: UIImageView!
     
     var person: Person?
+    
+    let separatorColor = UIColor(red: 200/255.0, green: 199/255.0, blue: 204/255.0, alpha: 1.0)
 
     init(person: Person) {
         self.person = person
@@ -32,12 +40,19 @@ class PersonDetailViewController: UIViewController, ManagePersonViewControllerDe
         let editItem = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: Selector.convertFromStringLiteral("editTapped"))
         navigationItem.rightBarButtonItem = editItem;
         
-        let separatorColor = UIColor(red: 200/255.0, green: 199/255.0, blue: 204/255.0, alpha: 1.0)
-        
         photoView.layer.cornerRadius = photoView.bounds.size.width / 2
         photoView.layer.masksToBounds = true
         photoView.layer.borderColor = separatorColor.CGColor
         photoView.layer.borderWidth = 1.0
+        
+        var phoneUnderlineView = UIView(frame: CGRectMake(16, 127.75, view.frame.size.width - 16, 0.5));
+        phoneUnderlineView.backgroundColor = separatorColor
+        
+        var emailUnderlineView = UIView(frame: CGRectMake(16, 173.75, view.frame.size.width - 16, 0.5));
+        emailUnderlineView.backgroundColor = separatorColor
+        
+        view.addSubview(phoneUnderlineView)
+        view.addSubview(emailUnderlineView)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -45,6 +60,12 @@ class PersonDetailViewController: UIViewController, ManagePersonViewControllerDe
         
         if person != nil {
             fullName.text = person!.fullName()
+            personalPhone.text = person!.personalPhoneNumber
+            personalEmail.text = person!.personalEmailAddress
+            personalStreetAddress.text = person!.personalStreetAddress
+            personalStreetAddressTwo.text = person!.personalStreetAddressTwo
+            personalSubSubRegionSubRegionPostalCode.text = person!.personalSubSubRegionSubRegionPostalCode()
+            personalRegion.text = person!.personalRegion
         }
     }
     

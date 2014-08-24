@@ -30,4 +30,22 @@ class Person: NSManagedObject {
         
         return firstLetter.uppercaseString
     }
+    
+    func personalSubSubRegionSubRegionPostalCode() -> String {
+        var pieces = [String]()
+    
+        if !personalSubSubRegion.isEmpty {
+            pieces.append(personalSubSubRegion)
+        }
+    
+        if !personalSubRegion.isEmpty {
+            pieces.append(personalSubRegion)
+        }
+    
+        if !personalPostalCode.isEmpty {
+            pieces.append(personalPostalCode)
+        }
+    
+        return " ".join(pieces)
+    }
 }
