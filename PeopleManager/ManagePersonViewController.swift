@@ -69,7 +69,7 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate, SubRegi
         
         let doneItem = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: Selector.convertFromStringLiteral("doneTapped"))
         navigationItem.rightBarButtonItem = doneItem;
-        navigationItem.rightBarButtonItem.enabled = false;
+        navigationItem.rightBarButtonItem!.enabled = false;
         
         photoView.layer.cornerRadius = photoView.bounds.size.width / 2
         photoView.layer.masksToBounds = true
@@ -206,7 +206,7 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate, SubRegi
                             person!.personalRegion != personalRegion.text
         }
         
-        navigationItem.rightBarButtonItem.enabled = !emptyNameField && modifiedField
+        navigationItem.rightBarButtonItem!.enabled = !emptyNameField && modifiedField
     }
     
     @IBAction func deleteTapped(sender: AnyObject) {
@@ -236,7 +236,7 @@ class ManagePersonViewController: UIViewController, UITextFieldDelegate, SubRegi
     
     func textFieldShouldBeginEditing(textField: UITextField!) -> Bool {
         if textField == personalSubRegion {
-            let subRegionViewController = SubRegionViewController(country: personalRegion.text, title: personalSubRegion.placeholder, delegate: self)
+            let subRegionViewController = SubRegionViewController(country: personalRegion.text, title: personalSubRegion.placeholder!, delegate: self)
             let navigationController = UINavigationController(rootViewController: subRegionViewController)
             
             presentViewController(navigationController, animated: true, completion: nil)

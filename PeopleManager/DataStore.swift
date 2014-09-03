@@ -32,7 +32,7 @@ class DataStore {
     
     lazy var managedObjectModel: NSManagedObjectModel = {
         // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
-        let modelURL = NSBundle.mainBundle().URLForResource("PeopleManager", withExtension: "momd")
+        let modelURL = NSBundle.mainBundle().URLForResource("PeopleManager", withExtension: "momd")!
         return NSManagedObjectModel(contentsOfURL: modelURL)
     }()
     
@@ -51,7 +51,6 @@ class DataStore {
             dict[NSLocalizedFailureReasonErrorKey] = failureReason
             dict[NSUnderlyingErrorKey] = error
             error = NSError.errorWithDomain("YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
-            // Replace this with code to handle the error appropriately.
             NSLog("Unresolved error \(error), \(error!.userInfo)")
         }
         

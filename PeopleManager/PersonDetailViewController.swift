@@ -68,7 +68,7 @@ class PersonDetailViewController: UIViewController, ManagePersonViewControllerDe
             personalSubSubRegionSubRegionPostalCode.text = person!.personalSubSubRegionSubRegionPostalCode()
             personalRegion.text = person!.personalRegion
             
-            personalStreetAddressTwoHeightConstraint.constant = personalStreetAddressTwo.text.isEmpty ? 0.0 : 25.0
+            personalStreetAddressTwoHeightConstraint.constant = personalStreetAddressTwo.text!.isEmpty ? 0.0 : 25.0
         }
     }
     
@@ -86,7 +86,7 @@ class PersonDetailViewController: UIViewController, ManagePersonViewControllerDe
     }
     
     func personDeleted() {
-        navigationController.popViewControllerAnimated(true)
+        navigationController!.popViewControllerAnimated(true)
     }
 }
 

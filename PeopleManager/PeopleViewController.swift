@@ -28,7 +28,7 @@ class PeopleViewController: UITableViewController, NSFetchedResultsControllerDel
         
         _fetchedResultsController = NSFetchedResultsController(
             fetchRequest: fetchRequest,
-            managedObjectContext: DataStore.sharedStore().managedObjectContext,
+            managedObjectContext: DataStore.sharedStore().managedObjectContext!,
             sectionNameKeyPath: sectionNameKeyPath,
             cacheName: "People"
         )
@@ -98,26 +98,26 @@ class PeopleViewController: UITableViewController, NSFetchedResultsControllerDel
     
     // MARK: - UITableViewDataSource
     
-    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
-        return fetchedResultsController.sections.count
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return fetchedResultsController.sections!.count
     }
     
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-        let sectionInfo = fetchedResultsController.sections[section] as NSFetchedResultsSectionInfo
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let sectionInfo = fetchedResultsController.sections![section] as NSFetchedResultsSectionInfo
         return sectionInfo.numberOfObjects
     }
     
-    override func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
-        let sectionInfo = fetchedResultsController.sections[section] as NSFetchedResultsSectionInfo
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let sectionInfo = fetchedResultsController.sections![section] as NSFetchedResultsSectionInfo
         return sectionInfo.name
     }
-    
-    override func tableView(tableView: UITableView!, willDisplayHeaderView view: UIView!, forSection section: Int) {
+
+    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         let tableViewHeaderFooterView = view as UITableViewHeaderFooterView
         tableViewHeaderFooterView.textLabel.font = UIFont.boldSystemFontOfSize(18)
     }
     
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as? UITableViewCell
         if cell == nil {
             cell = UITableViewCell(style: .Default, reuseIdentifier: cellIdentifier)
@@ -130,14 +130,14 @@ class PeopleViewController: UITableViewController, NSFetchedResultsControllerDel
         return cell!
     }
     
-    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let selectedPerson = fetchedResultsController.objectAtIndexPath(indexPath) as Person
         let personDetailViewController = PersonDetailViewController(person: selectedPerson)
         
-        navigationController.pushViewController(personDetailViewController, animated: true)
+        navigationController!.pushViewController(personDetailViewController, animated: true)
     }
     
-    override func tableView(tableView: UITableView!, didDeselectRowAtIndexPath indexPath: NSIndexPath!) {
+    override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
@@ -165,7 +165,7 @@ class PeopleViewController: UITableViewController, NSFetchedResultsControllerDel
         if type == .Insert {
             tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Fade)
         } else if type == .Update {
-            configureCell(tableView.cellForRowAtIndexPath(indexPath), person: anObject as Person)
+            configureCell(tableView.cellForRowAtIndexPath(indexPath)!, person: anObject as Person)
         } else if type == .Delete {
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
@@ -206,12 +206,12 @@ class PeopleViewController: UITableViewController, NSFetchedResultsControllerDel
         
         attrFullName.endEditing()
         
-        cell.textLabel.attributedText = attrFullName
+        cell.textLabel!.attributedText = attrFullName
     }
     
     // MARK: - UISearchResultsUpdating
     
-    func updateSearchResultsForSearchController(searchController: UISearchController!) {
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
         fetchedResultsControllerWithSearchString(searchController.searchBar.text)
         
         if searchController.active {
@@ -227,7 +227,7 @@ class PeopleViewController: UITableViewController, NSFetchedResultsControllerDel
     func doneManagingPerson(person: Person?) {
         let personDetailViewController = PersonDetailViewController(person: person!)
         
-        navigationController.pushViewController(personDetailViewController, animated: false)
+        navigationController!.pushViewController(personDetailViewController, animated: false)
     }
     
     func personDeleted() {
